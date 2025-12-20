@@ -1,170 +1,178 @@
+<svelte:head>
+    <title>University of Nizwa - Where Tradition Meets Innovation</title>
+    <meta name="description" content="The University of Nizwa combines academic excellence with modern facilities to prepare students for global success. Explore our world-class programs and vibrant campus community." />
+</svelte:head>
+
 <script lang="ts">
 	import { onMount } from 'svelte';
 
     // Data for sections
-    const navLinks = ["Solutions", "Partner stories", "Integrations", "Events", "Pricing"];
+    const navLinks = ["Academics", "Admissions", "Campus Life", "Research", "About"];
     
-    const logos = [
-        { name: "Strava", width: 100 },
-        { name: "piab", width: 60 },
-        { name: "Huel", width: 80 },
-        { name: "swile", width: 70 },
-        { name: "Polestar", width: 110 },
-        { name: "Electrolux Group", width: 120 },
-        { name: "Brex", width: 80 }
+    const accreditations = [
+        { name: "Ministry of Higher Education", width: 120 },
+        { name: "AACSB", width: 80 },
+        { name: "ABET", width: 70 },
+        { name: "QAA", width: 60 },
+        { name: "UNESCO", width: 100 },
+        { name: "Arab League", width: 90 }
     ];
 
     const features = [
         {
-            tag: "AI LEARNING EXPERIENCE",
-            title: "A personal tutor at every learner's fingertips",
-            image: "phone",
+            tag: "ACADEMIC EXCELLENCE",
+            title: "World-class programs accredited internationally",
+            image: "/generated/image-students-collaborating-in-a-modern-libra-1766208080538-1.webp",
             color: "bg-gray-100"
         },
         {
-            tag: "VIRTUAL CLASSROOM",
-            title: "Blended learning streamlined in one platform",
-            image: "video",
+            tag: "RESEARCH FACILITIES",
+            title: "State-of-the-art laboratories and research centers",
+            image: "/generated/image-science-laboratory-with-students-conduct-1766208083055-2.webp",
             color: "bg-gray-100"
         },
         {
-            tag: "JUST-IN-TIME LEARNING",
-            title: "Instant search and answers to any question",
-            image: "search",
+            tag: "WORLD-CLASS FACULTY",
+            title: "Learn from distinguished scholars and industry experts",
+            image: "/generated/image-university-lecture-hall-with-professor-t-1766208085525-3.webp",
             color: "bg-gray-100"
         },
         {
-            tag: "COLLABORATIVE AUTHORING",
-            title: "Beautiful interactive content created at lightning speed",
-            image: "editor",
+            tag: "VIBRANT CAMPUS LIFE",
+            title: "Rich student experience with diverse activities",
+            image: "/generated/image-students-participating-in-campus-activit-1766208087979-4.webp",
             color: "bg-gray-100"
         },
         {
-            tag: "LEARNING MANAGEMENT",
-            title: "All your manual learning admin on autopilot",
-            image: "admin",
+            tag: "MODERN FACILITIES",
+            title: "Contemporary campus blending tradition and innovation",
+            image: "/generated/image-modern-university-building-exterior-with-1766208090711-5.webp",
             color: "bg-gray-100"
         },
         {
-            tag: "LEARNING ANALYTICS",
-            title: "Shareable dashboards and insights in seconds",
-            image: "analytics",
+            tag: "GLOBAL COMMUNITY",
+            title: "International environment preparing you for the world",
+            image: "/generated/image-happy-international-students-studying-to-1766208095634-7.webp",
             color: "bg-gray-100"
         }
     ];
 
     const testimonials = [
         {
-            quote: "Sana Learn has helped us go from manual, one-size-fits-all onboarding to a fully automated, yet still tailored experience.",
-            name: "Olivia Winkvist",
-            role: "Talent manager at Foodora",
-            avatar: "OW"
+            quote: "The University of Nizwa provided me with an exceptional education that prepared me for a successful career in engineering. The faculty's dedication and modern facilities made all the difference.",
+            name: "Ahmed Al-Balushi",
+            role: "Civil Engineering Graduate, Class of 2023",
+            avatar: "AA"
         },
         {
-            quote: "The first system I've seen that can truly be an end-to-end learning platform for companies.",
-            name: "Josh Bersin",
-            role: "The Josh Bersin Company",
-            avatar: "JB"
+            quote: "Studying at Unizwa was transformative. The blend of traditional values and modern teaching methods created the perfect learning environment.",
+            name: "Fatima Al-Rashidi",
+            role: "Business Administration Graduate",
+            avatar: "FR"
         },
          {
-            quote: "After my first demo, I couldn't believe Sana had all the tools I needed to efficiently design and evaluate the learning experience, not to mention a beautiful UI and engaging design.",
-            name: "Ali Friedrich",
-            role: "Director of Learning Experience at Superside",
-            avatar: "AF"
-        },
-        // Adding more to fill the grid as per screenshot
-        {
-            quote: "Sana Learn was the end-to-end learning platform we had been waiting for. It isn't just a tool for L&D or People Partners. It's a tool for everyone.",
-            name: "Amber de Wolde",
-            role: "Senior People Partner at Veriff",
-            avatar: "AW"
+            quote: "The research opportunities at University of Nizwa are outstanding. I was able to work on cutting-edge projects that have shaped my academic career.",
+            name: "Dr. Mohammed Al-Hinai",
+            role: "PhD Graduate, Now Assistant Professor",
+            avatar: "MH"
         },
         {
-            quote: "This isn't just another learning platform. Sana is something unique and powerful, in equal measure.",
-            name: "Luke O'Mahoney",
-            role: "People Experience Advisor",
-            avatar: "LO"
+            quote: "The international community at Unizwa enriched my university experience. I made lifelong friends from around the world while receiving a world-class education.",
+            name: "Sarah Johnson",
+            role: "International Student, Computer Science",
+            avatar: "SJ"
         },
         {
-            quote: "Sana is not an LMS with Gen AI added. It's AI at its core.",
-            name: "Josh Bersin",
-            role: "The Josh Bersin Company",
-            avatar: "JB"
+            quote: "The support from faculty and staff at University of Nizwa goes beyond academics. They truly care about student success and personal growth.",
+            name: "Khalid Al-Mamari",
+            role: "Pharmacy Graduate, Class of 2024",
+            avatar: "KM"
+        },
+        {
+            quote: "University of Nizwa's commitment to academic excellence and innovation sets it apart. The skills I gained here have been invaluable in my professional journey.",
+            name: "Layla Al-Habsi",
+            role: "Law Graduate, Now Practicing Attorney",
+            avatar: "LH"
         }
     ];
 
-    const partnershipServices = [
-        "Dedicated deployment lead",
-        "Complete implementation support",
-        "Tailored onboarding",
-        "Priority support",
-        "Content migration services",
-        "L&D strategy and consulting",
-        "Community, events, and resources"
+    const studentSupport = [
+        "Academic advising and counseling",
+        "Career development services",
+        "International student support",
+        "Scholarship and financial aid",
+        "Student housing assistance",
+        "Health and wellness programs",
+        "Library and research resources"
     ];
 
-    const comparisons = [
+    const programs = [
         {
-            tag: "LEARNING MANAGEMENT",
-            left: "Manage learning through static course catalogs and scheduled sessions through manual admin",
-            right: "AI handles enrollments, scheduling, and updates automatically based on pre-configured rules"
+            tag: "UNDERGRADUATE",
+            title: "Bachelor's Degrees",
+            description: "Comprehensive programs in Engineering, Business, Sciences, Arts, and more"
         },
         {
-            tag: "SKILLS MANAGEMENT",
-            left: "Build a taxonomy, market voluntary courses, and manage skills",
-            right: "AI monitors and designs learning experiences based on real-time, individual performance"
+            tag: "GRADUATE",
+            title: "Master's Programs",
+            description: "Advanced studies designed for professional and academic advancement"
         },
         {
-            tag: "CONTENT CREATION",
-            left: "Design, create, and launch courses or programs based on scoped business partner requirements",
-            right: "AI generates content dynamically from source material in a formal suited to the learner's preferences"
+            tag: "DOCTORAL",
+            title: "PhD Programs",
+            description: "Research-intensive programs leading to doctoral degrees in various fields"
         },
         {
-            tag: "JUST-IN-TIME LEARNING",
-            left: "Purchase and build out a separate wiki for users to find company-specific information",
-            right: "AI answers questions in natural language directly from the learning platform and cites sources"
+            tag: "PROFESSIONAL",
+            title: "Professional Development",
+            description: "Continuing education and certificate programs for working professionals"
         },
         {
-            tag: "LEARNING ANALYTICS",
-            left: "Export data from LMS, upload it to a BI tool for analysis, share results with stakeholders",
-            right: "AI generates dashboards and answers performance questions in real time, instantly accessible to stakeholders"
+            tag: "RESEARCH",
+            title: "Research Centers",
+            description: "State-of-the-art facilities supporting groundbreaking research initiatives"
         }
     ];
 
     const faqs = [
-        "What can I use Sana Learn for?",
-        "Can I brand the platform for a unique experience?",
-        "Is the authoring built-in?",
-        "What types of content can we create and include?",
-        "Can I integrate Sana with my HRIS and CRM?",
-        "Can I automate enrollments?",
-        "Can we migrate existing content from other LMS platforms?",
-        "What is Sana Learn's pricing?",
-        "How secure will my company's knowledge and data be with Sana?"
+        "What programs does the University of Nizwa offer?",
+        "How do I apply for admission?",
+        "What are the tuition fees and scholarship opportunities?",
+        "Does the university accept international students?",
+        "What is campus life like at University of Nizwa?",
+        "Are there accommodation options for students?",
+        "What career support services are available?",
+        "Is the university accredited?",
+        "How can I schedule a campus visit?"
     ];
 
 </script>
 
-<div class="font-sans text-gray-900 bg-white selection:bg-sana-lime selection:text-black">
+<div class="font-sans text-gray-900 bg-white selection:bg-primary-200 selection:text-black">
     <!-- Navbar -->
     <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
         <div class="max-w-[1400px] mx-auto px-6 h-16 flex items-center justify-between">
             <div class="flex items-center gap-2">
                 <!-- Logo Mark -->
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-black">
-                    <path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5L12 0Z" fill="currentColor"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-primary-600">
+                    <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M6.99251 12.196C6.85314 12.5757 6.62925 12.9208 6.33682 13.2067H6.33835C6.00191 13.5351 5.58566 13.7756 5.12816 13.9059C4.67065 14.0362 4.18671 14.0522 3.72118 13.9523C3.25564 13.8524 2.82357 13.64 2.46501 13.3345C2.10645 13.0291 1.83299 12.6406 1.66998 12.2051C1.50697 11.7696 1.45969 11.3012 1.5325 10.8432C1.60532 10.3852 1.79587 9.95244 2.08653 9.58516C2.37718 9.21781 2.75852 8.9277 3.1952 8.74177C3.63188 8.55585 4.10979 8.48002 4.58462 8.52142L4.57074 8.50792C5.0567 8.54782 5.54575 8.48407 6.00378 8.32124C6.4618 8.15846 6.87776 7.90043 7.2226 7.56521C7.56746 7.22998 7.83285 6.82564 8.00036 6.38041C8.16786 5.93517 8.23344 5.45976 8.1924 4.98737L8.20628 5.00087C8.15181 4.43594 8.27796 3.86844 8.56753 3.37575C8.85701 2.88307 9.29579 2.48919 9.82407 2.24782C10.3523 2.00645 10.9443 1.92933 11.5192 2.02701C12.0942 2.12467 12.6243 2.39237 13.037 2.79358C13.4497 3.19479 13.7251 3.70999 13.8256 4.26892C13.926 4.82785 13.8467 5.4033 13.5984 5.9168C13.3501 6.4303 12.9449 6.85685 12.4381 7.13828C11.9313 7.41971 11.3474 7.54233 10.7663 7.4894L10.781 7.5029C10.2949 7.46279 9.80563 7.52632 9.34741 7.68904C8.88919 7.85176 8.47309 8.10975 8.12805 8.44499C7.78301 8.78025 7.51742 9.18466 7.34983 9.63001C7.18224 10.0754 7.11669 10.551 7.15774 11.0235L7.14309 11.01C7.1833 11.4112 7.13189 11.8162 6.99251 12.196ZM11.5077 14.7121L11.493 14.6986C11.9061 14.739 12.3232 14.6897 12.7143 14.5543C13.1053 14.4188 13.4605 14.2007 13.7542 13.9154C14.0477 13.6302 14.2726 13.285 14.4121 12.905C14.5518 12.525 14.6028 12.1196 14.5615 11.718L14.5762 11.7315C14.5351 11.2591 14.6007 10.7838 14.7681 10.3385C14.9356 9.89327 15.2011 9.48893 15.5459 9.15368C15.8908 8.8185 16.3068 8.56042 16.7648 8.39767C17.2228 8.23481 17.7118 8.17111 18.1978 8.21099L18.1832 8.19749C18.7645 8.25059 19.3485 8.12801 19.8556 7.84656C20.3627 7.56511 20.7681 7.13845 21.0165 6.62479C21.265 6.11114 21.3444 5.53548 21.2439 4.97634C21.1435 4.4172 20.868 3.9018 20.4551 3.50044C20.0422 3.09909 19.512 2.8313 18.9368 2.73364C18.3616 2.63596 17.7695 2.71315 17.241 2.95467C16.7126 3.19618 16.2737 3.59027 15.9842 4.08319C15.6946 4.57609 15.5685 5.14383 15.6232 5.70895L15.6093 5.6947C15.6504 6.16712 15.585 6.64259 15.4175 7.08788C15.2501 7.53318 14.9846 7.93758 14.6398 8.27287C14.2949 8.60805 13.8789 8.86612 13.4208 9.02888C12.9627 9.19163 12.4736 9.25523 11.9876 9.21526L12.0015 9.22951C11.5885 9.18908 11.1713 9.23836 10.7803 9.37381C10.3893 9.50919 10.034 9.72744 9.74039 10.0127C9.44674 10.2979 9.22199 10.6431 9.08234 11.0231C8.94276 11.4031 8.89176 11.8085 8.93304 12.2101L8.91915 12.1966C8.96005 12.6689 8.89439 13.1443 8.72688 13.5895C8.5593 14.0346 8.29389 14.4389 7.94908 14.7741C7.60425 15.1093 7.18835 15.3673 6.73039 15.5302C6.27242 15.693 5.78342 15.7569 5.29749 15.7171L5.31138 15.7306C4.73003 15.6775 4.14599 15.8001 3.63892 16.0815C3.13186 16.363 2.72644 16.7896 2.478 17.3033C2.22954 17.817 2.15013 18.3926 2.25061 18.9518C2.35109 19.5109 2.62657 20.0263 3.03945 20.4276C3.45234 20.829 3.98253 21.0968 4.55773 21.1944C5.13293 21.2921 5.72512 21.2149 6.25353 20.9734C6.78193 20.7319 7.22085 20.3379 7.51038 19.8449C7.79994 19.352 7.92601 18.7843 7.87139 18.2191L7.88605 18.2326C7.845 17.7602 7.91058 17.2849 8.07809 16.8396C8.24551 16.3944 8.511 15.99 8.85581 15.6548C9.20069 15.3196 9.61664 15.0615 10.0746 14.8988C10.5327 14.7359 11.0217 14.6722 11.5077 14.7121ZM17.1996 10.7633C16.9071 11.0493 16.6832 11.3944 16.5437 11.7741C16.4042 12.1538 16.3526 12.5587 16.3925 12.9601L16.3786 12.9466C16.4197 13.419 16.3541 13.8944 16.1866 14.3396C16.0191 14.7849 15.7537 15.1892 15.4089 15.5244C15.064 15.8596 14.648 16.1177 14.19 16.2804C13.732 16.4433 13.2429 16.507 12.757 16.4671L12.7708 16.4806C12.1896 16.4281 11.6057 16.551 11.0989 16.8328C10.5921 17.1145 10.1871 17.5414 9.93902 18.0551C9.69097 18.5689 9.61188 19.1444 9.71265 19.7035C9.81349 20.2625 10.0892 20.7777 10.5022 21.1788C10.9152 21.5799 11.4454 21.8474 12.0205 21.9448C12.5957 22.0423 13.1877 21.9649 13.716 21.7234C14.2443 21.4817 14.683 21.0877 14.9724 20.5947C15.2618 20.1018 15.3878 19.5342 15.3332 18.9692L15.3478 18.9827C15.3068 18.5103 15.3723 18.0349 15.5398 17.5896C15.7073 17.1444 15.9728 16.7401 16.3176 16.4048C16.6625 16.0696 17.0784 15.8115 17.5364 15.6488C17.9945 15.486 18.4835 15.4222 18.9695 15.4621L18.9548 15.4486C19.4296 15.4901 19.9076 15.4144 20.3444 15.2286C20.7811 15.0427 21.1625 14.7527 21.4533 14.3854C21.744 14.0181 21.9347 13.5854 22.0075 13.1274C22.0805 12.6694 22.0332 12.2009 21.8703 11.7653C21.7073 11.3298 21.4339 10.9413 21.0754 10.6358C20.7168 10.3303 20.2848 10.1178 19.8192 10.0179C19.3536 9.91795 18.8697 9.93385 18.4121 10.0641C17.9546 10.1945 17.5383 10.4349 17.2019 10.7633H17.1996Z"
+                        fill="currentColor"
+                    />
                 </svg>
-                <span class="font-medium text-lg tracking-tight">Sana Learn</span>
+                <span class="font-medium text-lg tracking-tight">University of Nizwa</span>
             </div>
 
             <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
                 {#each navLinks as link}
-                    <a href="#" class="hover:text-black transition-colors">{link}</a>
+                    <a href="#" class="hover:text-primary-600 transition-colors">{link}</a>
                 {/each}
             </div>
 
-            <button class="bg-sana-blue text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-600 transition-colors">
-                Book an intro
+            <button class="bg-primary-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-primary-700 transition-colors">
+                Apply Now
             </button>
         </div>
     </nav>
@@ -173,174 +181,68 @@
     <section class="pt-20 pb-16 px-6 text-center overflow-hidden">
         <div class="max-w-4xl mx-auto mb-12">
             <h1 class="font-serif text-6xl md:text-7xl lg:text-[5rem] leading-[1.1] mb-6 font-normal tracking-tight">
-                The future of <br/> enterprise learning
+                Where tradition meets <br/> innovation in education
             </h1>
             <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8 leading-relaxed">
-                Sana Learn brings the best of an LMS, LXP, authoring tool, and virtual classroom into one AI-native learning platform.
+                The University of Nizwa combines academic excellence with modern facilities to prepare students for global success.
             </p>
-            <button class="bg-sana-lime text-black px-8 py-3 rounded-full text-base font-medium hover:bg-[#c2e600] transition-colors">
-                Book an intro
+            <button class="bg-primary-600 text-white px-8 py-3 rounded-full text-base font-medium hover:bg-primary-700 transition-colors">
+                Explore Programs
             </button>
         </div>
 
-        <!-- Hero Image Collage Mockup -->
-        <div class="relative max-w-[1400px] mx-auto h-[400px] md:h-[600px] mt-12 select-none pointer-events-none">
-            <!-- We will build a CSS composition of screens -->
-            <div class="relative w-full h-full flex justify-center items-end">
-                
-                <!-- Left Laptop -->
-                <div class="absolute left-[-10%] bottom-0 w-[60%] md:w-[45%] z-10 transform -translate-x-10 translate-y-10">
-                     <div class="bg-gray-900 rounded-t-xl p-1 shadow-2xl border border-gray-800 aspect-[16/10] overflow-hidden">
-                        <!-- Screen Content -->
-                        <div class="bg-gray-800 w-full h-full rounded-lg relative overflow-hidden">
-                            <div class="absolute inset-0 bg-gradient-to-br from-blue-900 to-black opacity-80"></div>
-                            <div class="p-4 text-white">
-                                <div class="text-xs text-gray-400 mb-2">Space Tech</div>
-                                <div class="h-2 w-20 bg-gray-600 rounded mb-4"></div>
-                                <div class="grid grid-cols-2 gap-4">
-                                    <div class="h-20 bg-gray-700/50 rounded"></div>
-                                    <div class="h-20 bg-gray-700/50 rounded"></div>
-                                </div>
-                            </div>
-                        </div>
-                     </div>
-                </div>
-
-                <!-- Center Laptop (Main) -->
-                <div class="absolute bottom-0 z-20 w-[70%] md:w-[50%] transform translate-y-5">
-                    <div class="bg-black rounded-t-2xl p-2 shadow-2xl border border-gray-800 aspect-[16/10]">
-                        <div class="bg-white w-full h-full rounded-xl overflow-hidden relative">
-                            <!-- Mock UI -->
-                            <div class="flex h-full">
-                                <div class="w-1/3 bg-gray-50 p-4 border-r border-gray-100">
-                                    <div class="h-8 w-8 bg-gray-200 rounded-full mb-4"></div>
-                                    <div class="h-2 w-20 bg-gray-200 rounded mb-2"></div>
-                                    <div class="h-2 w-16 bg-gray-200 rounded mb-6"></div>
-                                    <div class="space-y-2">
-                                        <div class="h-8 w-full bg-white border border-gray-200 rounded shadow-sm"></div>
-                                        <div class="h-8 w-full bg-transparent rounded"></div>
-                                    </div>
-                                </div>
-                                <div class="w-2/3 p-4">
-                                    <div class="h-32 bg-gray-100 rounded-lg mb-4 flex items-center justify-center">
-                                        <div class="w-12 h-12 bg-gray-300 rounded-full"></div>
-                                    </div>
-                                    <div class="h-4 w-3/4 bg-gray-100 rounded mb-2"></div>
-                                    <div class="h-4 w-1/2 bg-gray-100 rounded"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Phone/Tablet -->
-                <div class="absolute right-[-5%] bottom-10 w-[25%] md:w-[15%] z-30 transform translate-x-5">
-                    <div class="bg-black rounded-[2rem] p-2 shadow-2xl border border-gray-800 aspect-[9/19]">
-                        <div class="bg-white w-full h-full rounded-[1.5rem] overflow-hidden p-2 flex flex-col">
-                             <div class="h-4 w-20 bg-gray-100 rounded mx-auto mb-4 mt-2"></div>
-                             <div class="flex-1 bg-gray-50 rounded-xl p-2">
-                                <div class="h-16 bg-sana-lime/20 rounded-lg mb-2"></div>
-                                <div class="h-16 bg-blue-50 rounded-lg mb-2"></div>
-                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                 <!-- Another Right Screen (Tablet?) -->
-                <div class="absolute right-[10%] bottom-0 w-[40%] md:w-[30%] z-10 transform translate-x-10 translate-y-10">
-                     <div class="bg-white rounded-t-xl p-1 shadow-2xl border border-gray-200 aspect-[4/3] overflow-hidden">
-                        <div class="bg-gray-50 w-full h-full rounded-lg p-3">
-                             <div class="flex gap-2 mb-3">
-                                <div class="w-1/3 h-20 bg-white shadow-sm rounded-lg"></div>
-                                <div class="w-1/3 h-20 bg-white shadow-sm rounded-lg"></div>
-                                <div class="w-1/3 h-20 bg-white shadow-sm rounded-lg"></div>
-                             </div>
-                             <div class="h-32 bg-white shadow-sm rounded-lg"></div>
-                        </div>
-                     </div>
-                </div>
-
-            </div>
+        <!-- Hero Image -->
+        <div class="relative max-w-[1400px] mx-auto h-[400px] md:h-[600px] mt-12 rounded-3xl overflow-hidden shadow-2xl">
+            <img 
+                src="/generated/image-modern-university-campus-with-students-w-1766208076982-0.webp" 
+                alt="University of Nizwa Campus" 
+                class="w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
         </div>
     </section>
 
-    <!-- Logos Section -->
+    <!-- Accreditations Section -->
     <section class="py-16 border-b border-gray-100">
         <div class="max-w-[1400px] mx-auto px-6 text-center">
-            <p class="text-sm text-gray-500 mb-10">Trusted by market leaders and innovators alike</p>
+            <p class="text-sm text-gray-500 mb-10">Internationally accredited and recognized</p>
             <div class="flex flex-wrap justify-center items-center gap-12 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-                {#each logos as logo}
+                {#each accreditations as accreditation}
                     <div class="h-8 flex items-center justify-center">
-                        <!-- Placeholder for logo text/svg -->
-                        <span class="font-bold text-xl font-serif italic">{logo.name}</span>
+                        <span class="font-bold text-lg text-gray-700">{accreditation.name}</span>
                     </div>
                 {/each}
             </div>
         </div>
     </section>
 
-    <!-- Meet Sana Learn Grid -->
+    <!-- Why Choose Unizwa Grid -->
     <section class="py-24 px-6 bg-gray-50">
         <div class="max-w-[1400px] mx-auto">
             <div class="text-center max-w-3xl mx-auto mb-20">
-                <h2 class="font-serif text-5xl md:text-6xl mb-6">Meet Sana Learn</h2>
+                <h2 class="font-serif text-5xl md:text-6xl mb-6">Why Choose Unizwa</h2>
                 <p class="text-lg text-gray-600 leading-relaxed">
-                    Say goodbye to fragmented learning tools. Sana Learn is the only platform designed to move you beyond one-size-fits-all content to a truly dynamic, personalized learning experience at scale.
+                    The University of Nizwa offers a comprehensive educational experience that combines academic rigor with practical skills, preparing students for successful careers in a global marketplace.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {#each features as feature}
-                    <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-[500px]">
-                        <div class="p-8 pb-0 flex-1">
-                            <span class="inline-block bg-sana-lime text-[10px] font-bold tracking-wider px-2 py-1 rounded mb-4 uppercase">
+                    <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col">
+                        <div class="p-8">
+                            <span class="inline-block bg-primary-100 text-primary-700 text-[10px] font-bold tracking-wider px-2 py-1 rounded mb-4 uppercase">
                                 {feature.tag}
                             </span>
                             <h3 class="font-serif text-2xl leading-tight mb-4">
                                 {feature.title}
                             </h3>
                         </div>
-                        <div class="h-[300px] bg-gray-100 relative overflow-hidden mt-4 mx-4 rounded-t-xl group-hover:translate-y-[-5px] transition-transform duration-500">
-                            <!-- Mockup Content based on type -->
-                            {#if feature.image === 'phone'}
-                                <div class="absolute bottom-[-20px] left-1/2 transform -translate-x-1/2 w-[180px] h-[350px] bg-black rounded-[2rem] border-4 border-black shadow-xl overflow-hidden">
-                                     <div class="bg-white w-full h-full p-3 pt-8">
-                                        <div class="h-2 w-12 bg-gray-200 rounded mx-auto mb-4"></div>
-                                        <div class="space-y-2">
-                                            <div class="h-16 bg-gray-50 rounded-lg"></div>
-                                            <div class="h-16 bg-gray-50 rounded-lg"></div>
-                                        </div>
-                                     </div>
-                                </div>
-                            {:else if feature.image === 'video'}
-                                <div class="absolute inset-0 p-4 flex items-end justify-center">
-                                    <div class="w-full h-[90%] bg-gray-800 rounded-t-lg shadow-lg relative overflow-hidden">
-                                        <div class="absolute inset-0 flex items-center justify-center text-white/20">
-                                            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
-                                        </div>
-                                        <div class="absolute bottom-4 left-4 flex gap-2">
-                                            <div class="w-8 h-8 bg-gray-600 rounded-full"></div>
-                                            <div class="w-8 h-8 bg-gray-600 rounded-full"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            {:else if feature.image === 'search'}
-                                 <div class="absolute bottom-[-40px] right-[-20px] w-full h-full bg-white shadow-lg rounded-tl-2xl p-6 border border-gray-100">
-                                     <div class="flex items-center gap-3 mb-4 border-b pb-4">
-                                         <div class="w-8 h-8 bg-sana-lime rounded-full"></div>
-                                         <div class="h-2 w-32 bg-gray-200 rounded"></div>
-                                     </div>
-                                     <div class="space-y-3">
-                                         <div class="h-2 w-full bg-gray-100 rounded"></div>
-                                         <div class="h-2 w-5/6 bg-gray-100 rounded"></div>
-                                         <div class="h-2 w-4/6 bg-gray-100 rounded"></div>
-                                     </div>
-                                 </div>
-                            {:else}
-                                <div class="absolute inset-4 bg-white shadow-sm rounded-lg border border-gray-100 flex items-center justify-center">
-                                    <div class="text-gray-300">UI Mockup</div>
-                                </div>
-                            {/if}
+                        <div class="h-[300px] relative overflow-hidden">
+                            <img 
+                                src={feature.image} 
+                                alt={feature.title}
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            />
                         </div>
                     </div>
                 {/each}
@@ -352,27 +254,18 @@
     <section class="py-24 px-6 bg-white">
         <div class="max-w-[1400px] mx-auto">
             <div class="text-center max-w-3xl mx-auto mb-20">
-                <h2 class="font-serif text-5xl md:text-6xl mb-6">Loved by users, creators, <br/> and admins alike</h2>
+                <h2 class="font-serif text-5xl md:text-6xl mb-6">Student Success Stories</h2>
                 <p class="text-lg text-gray-600 leading-relaxed mb-10">
-                    The modern learning experience everyone deserves. <br/> You don't have to choose between user-friendly and enterprise-ready.
+                    Hear from our graduates and current students about their transformative experiences at the University of Nizwa.
                 </p>
-                <div class="flex justify-center gap-4">
-                    <!-- G2 Badges Mockup -->
-                    {#each Array(5) as _, i}
-                        <div class="w-16 h-20 bg-gradient-to-br from-red-50 to-orange-50 border border-red-100 rounded flex flex-col items-center justify-center p-1 text-[8px] text-center text-red-800 font-bold shadow-sm">
-                            <div class="w-6 h-6 bg-red-500 rounded-full mb-1 text-white flex items-center justify-center">G2</div>
-                            Leader
-                        </div>
-                    {/each}
-                </div>
             </div>
 
             <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
                 {#each testimonials as testimonial}
-                    <div class="break-inside-avoid bg-gray-50 p-8 rounded-2xl">
+                    <div class="break-inside-avoid bg-gray-50 p-8 rounded-2xl border border-gray-100">
                         <p class="text-lg leading-relaxed mb-6">"{testimonial.quote}"</p>
                         <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-sm font-bold text-gray-600">
+                            <div class="w-10 h-10 bg-primary-200 rounded-full flex items-center justify-center text-sm font-bold text-primary-700">
                                 {testimonial.avatar}
                             </div>
                             <div>
@@ -386,180 +279,159 @@
         </div>
     </section>
 
-    <!-- Partnership Section -->
+    <!-- Student Support Section -->
     <section class="py-24 px-6 bg-white border-t border-gray-100">
         <div class="max-w-[1400px] mx-auto">
              <div class="text-center max-w-3xl mx-auto mb-20">
-                <h2 class="font-serif text-5xl md:text-6xl mb-6">The proof is in <br/> the partnership</h2>
+                <h2 class="font-serif text-5xl md:text-6xl mb-6">Comprehensive <br/> Student Support</h2>
                 <p class="text-lg text-gray-600 leading-relaxed">
-                    It isn't all about the technology. Organizations choose Sana <br/> because we're product-led and partnership-driven.
+                    At the University of Nizwa, we're committed to your success both inside and outside the classroom.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="bg-gray-50 p-12 rounded-3xl h-full">
-                    <h3 class="font-serif text-2xl mb-8">Enterprise partnership services</h3>
+                <div class="bg-gray-50 p-12 rounded-3xl h-full border border-gray-100">
+                    <h3 class="font-serif text-2xl mb-8">Support Services</h3>
                     <ul class="space-y-4">
-                        {#each partnershipServices as service}
+                        {#each studentSupport as service}
                             <li class="flex items-center gap-3">
-                                <div class="w-5 h-5 rounded-full bg-sana-lime flex items-center justify-center shrink-0">
-                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <div class="w-5 h-5 rounded-full bg-primary-500 flex items-center justify-center shrink-0">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                 </div>
                                 <span class="text-gray-700">{service}</span>
                             </li>
                         {/each}
                     </ul>
                 </div>
-                <div class="h-full min-h-[500px] rounded-3xl overflow-hidden relative">
-                    <!-- Placeholder image for people collaborating -->
-                    <div class="absolute inset-0 bg-gray-200">
-                        <div class="w-full h-full bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center grayscale opacity-80 hover:grayscale-0 transition-all duration-700"></div>
-                    </div>
+                <div class="h-full min-h-[500px] rounded-3xl overflow-hidden relative shadow-lg">
+                    <img 
+                        src="/generated/image-confident-young-graduate-in-cap-and-gown-1766208093250-6.webp" 
+                        alt="Successful Graduate"
+                        class="w-full h-full object-cover"
+                    />
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Case Studies Section -->
+    <!-- Academic Programs Section -->
     <section class="py-24 px-6 bg-white">
         <div class="max-w-[1400px] mx-auto">
-            <div class="flex justify-between items-end mb-12">
-                <p class="text-lg text-gray-600 max-w-xl">Sana Learn is a fit for any industry. Read the results yourself.</p>
-                <div class="flex gap-2">
-                    <button class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50">
-                        ←
-                    </button>
-                    <button class="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center hover:bg-gray-800">
-                        →
-                    </button>
-                </div>
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-serif text-5xl md:text-6xl mb-6">Academic Programs</h2>
+                <p class="text-lg text-gray-600">Explore our diverse range of programs designed to prepare you for success.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Card 1 -->
-                <div class="aspect-[4/5] relative rounded-2xl overflow-hidden group cursor-pointer">
-                    <div class="absolute inset-0 bg-gray-900">
-                        <!-- Mock Background Image -->
-                        <div class="absolute inset-0 opacity-50 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center mix-blend-overlay opacity-40"></div>
-                    </div>
-                    <div class="absolute inset-0 p-8 flex flex-col justify-between text-white">
-                        <div>
-                            <h3 class="font-serif text-3xl leading-tight mb-4">Polestar increases active users by 275%</h3>
-                            <div class="text-xs text-gray-300 uppercase tracking-wider">Employees: 3000 <br/> Industry: Automotive</div>
-                        </div>
-                        <div class="font-bold text-xl">Polestar</div>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="aspect-[4/5] relative rounded-2xl overflow-hidden group cursor-pointer">
-                    <div class="absolute inset-0 bg-gray-900">
-                         <div class="absolute inset-0 opacity-50 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-                         <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center mix-blend-overlay opacity-40"></div>
-                    </div>
-                    <div class="absolute inset-0 p-8 flex flex-col justify-between text-white">
-                        <div>
-                            <h3 class="font-serif text-3xl leading-tight mb-4">Superside cuts design time by 80% and leads an AI revolution</h3>
-                            <div class="text-xs text-gray-300 uppercase tracking-wider">Employees: 750 <br/> Industry: Design and Marketing</div>
-                        </div>
-                        <div class="font-bold text-xl">Superside</div>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="aspect-[4/5] relative rounded-2xl overflow-hidden group cursor-pointer">
-                    <div class="absolute inset-0 bg-gray-900">
-                         <div class="absolute inset-0 opacity-50 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-                         <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center mix-blend-overlay opacity-40"></div>
-                    </div>
-                    <div class="absolute inset-0 p-8 flex flex-col justify-between text-white">
-                        <div>
-                            <h3 class="font-serif text-3xl leading-tight mb-4">Ahlsell accelerates course creation...</h3>
-                            <div class="text-xs text-gray-300 uppercase tracking-wider">Employees: 7500 <br/> Industry: Wholesale</div>
-                        </div>
-                        <div class="font-bold text-xl">ahlsell</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Comparison Section -->
-    <section class="py-24 px-6 bg-white">
-        <div class="max-w-[1400px] mx-auto">
-             <div class="text-center max-w-3xl mx-auto mb-20">
-                <h2 class="font-serif text-5xl md:text-6xl mb-6">AI is not an add-on. <br/> It's what we do.</h2>
-                <p class="text-lg text-gray-600 leading-relaxed">
-                    AI-first L&D can transform your team from a content delivery <br/> machine to a strategic value-driver.
-                </p>
-            </div>
-
-            <div class="border-t border-gray-100">
-                <div class="grid grid-cols-3 py-4 text-xs text-gray-400 uppercase tracking-wider border-b border-gray-100">
-                    <div>Status quo</div>
-                    <div class="text-center">→</div>
-                    <div>Sana Learn</div>
-                </div>
-                {#each comparisons as item}
-                    <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-8 py-12 border-b border-gray-100 items-center group hover:bg-gray-50 transition-colors px-4 -mx-4 rounded-xl">
-                        <div class="text-gray-500 leading-relaxed md:pr-8">
-                            {item.left}
-                        </div>
-                        <div class="flex justify-center">
-                            <span class="bg-sana-lime text-[10px] font-bold tracking-wider px-2 py-1 rounded uppercase whitespace-nowrap">
-                                {item.tag}
-                            </span>
-                        </div>
-                        <div class="text-black font-medium leading-relaxed md:pl-8">
-                            {item.right}
-                        </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {#each programs as program}
+                    <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+                        <span class="inline-block bg-primary-100 text-primary-700 text-[10px] font-bold tracking-wider px-2 py-1 rounded mb-4 uppercase">
+                            {program.tag}
+                        </span>
+                        <h3 class="font-serif text-2xl mb-4">{program.title}</h3>
+                        <p class="text-gray-600 leading-relaxed">{program.description}</p>
+                        <button class="mt-6 text-primary-600 font-medium hover:text-primary-700 transition-colors">
+                            Learn more →
+                        </button>
                     </div>
                 {/each}
             </div>
         </div>
     </section>
 
-    <!-- Integrations & Security Section -->
+    <!-- Campus Life Section -->
+    <section class="py-24 px-6 bg-gray-50">
+        <div class="max-w-[1400px] mx-auto">
+             <div class="text-center max-w-3xl mx-auto mb-20">
+                <h2 class="font-serif text-5xl md:text-6xl mb-6">Experience Campus Life</h2>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    Beyond academics, the University of Nizwa offers a vibrant campus community with diverse opportunities for personal growth and cultural enrichment.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-12 rounded-3xl border border-gray-100">
+                    <h3 class="font-serif text-3xl mb-6">Student Organizations</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Join over 50 student clubs and organizations covering academic interests, cultural activities, sports, and community service.
+                    </p>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-center gap-2">
+                            <span class="text-primary-600">•</span> Academic and Professional Societies
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-primary-600">•</span> Cultural and Arts Groups
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-primary-600">•</span> Sports and Recreation Teams
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-primary-600">•</span> Community Service Initiatives
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white p-12 rounded-3xl border border-gray-100">
+                    <h3 class="font-serif text-3xl mb-6">Campus Facilities</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        State-of-the-art facilities designed to support your academic journey and personal development.
+                    </p>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-center gap-2">
+                            <span class="text-primary-600">•</span> Modern Library and Learning Commons
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-primary-600">•</span> Sports Complex and Fitness Center
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-primary-600">•</span> Student Center and Dining Halls
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-primary-600">•</span> Innovation Labs and Maker Spaces
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Partnerships Section -->
     <section class="py-24 px-6 bg-white">
         <div class="max-w-[1400px] mx-auto">
              <div class="text-center max-w-3xl mx-auto mb-20">
-                <h2 class="font-serif text-5xl md:text-6xl mb-6">Enterprise-grade <br/> integrations and security</h2>
+                <h2 class="font-serif text-5xl md:text-6xl mb-6">Global Partnerships <br/> & Recognition</h2>
                 <p class="text-lg text-gray-600 leading-relaxed">
-                    We take this stuff as seriously as you do.
+                    The University of Nizwa maintains strong partnerships with leading institutions worldwide and holds prestigious accreditations.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                <!-- Integrations -->
+                <!-- International Partnerships -->
                 <div>
                     <div class="text-center mb-8">
-                        <span class="bg-sana-lime text-[10px] font-bold tracking-wider px-2 py-1 rounded uppercase">
-                            PLAYS NICE WITH YOUR FAVORITE TOOLS
+                        <span class="bg-primary-100 text-primary-700 text-[10px] font-bold tracking-wider px-2 py-1 rounded uppercase">
+                            INTERNATIONAL COLLABORATIONS
                         </span>
                     </div>
-                    <div class="grid grid-cols-4 gap-6">
-                        {#each ['Google Drive', 'Teams', 'Slack', 'Salesforce', 'Coursera', 'Edcast', 'Degreed', 'HiBob', 'Workday', 'Personio', 'SAP Litmos', 'Okta'] as tool}
-                            <div class="aspect-square bg-gray-50 rounded-xl flex flex-col items-center justify-center p-4 hover:bg-gray-100 transition-colors">
-                                <div class="w-8 h-8 bg-gray-200 rounded-full mb-2"></div> <!-- Icon Placeholder -->
-                                <span class="text-[10px] text-center text-gray-600 font-medium">{tool}</span>
+                    <div class="grid grid-cols-3 gap-6">
+                        {#each ['University Exchange Programs', 'Research Partnerships', 'Faculty Exchange', 'Joint Degrees', 'Study Abroad', 'International Conferences', 'Global Research Networks', 'Industry Partnerships', 'Innovation Hubs'] as partnership}
+                            <div class="aspect-square bg-gray-50 rounded-xl flex flex-col items-center justify-center p-4 hover:bg-gray-100 transition-colors border border-gray-100">
+                                <span class="text-[11px] text-center text-gray-700 font-medium leading-tight">{partnership}</span>
                             </div>
                         {/each}
                     </div>
                 </div>
 
-                <!-- Security -->
+                <!-- Accreditations -->
                 <div>
                     <div class="text-center mb-8">
-                        <span class="bg-sana-lime text-[10px] font-bold tracking-wider px-2 py-1 rounded uppercase">
-                            SECURITY YOU CAN STAND BY
+                        <span class="bg-primary-100 text-primary-700 text-[10px] font-bold tracking-wider px-2 py-1 rounded uppercase">
+                            ACCREDITATIONS & CERTIFICATIONS
                         </span>
                     </div>
-                    <div class="grid grid-cols-4 gap-6">
-                         {#each ['Custom user roles', 'User provisioning', 'Advanced permissions', 'Flexible groups', 'SOC 2 Type 2', 'GDPR compliant', 'ISO 27001', 'SCORM compliant', 'SAML single sign-on', '2FA with email codes', 'Regional deploys', 'Audit logging'] as item}
-                            <div class="aspect-square bg-gray-50 rounded-xl flex flex-col items-center justify-center p-2 hover:bg-gray-100 transition-colors">
-                                <div class="w-6 h-6 border-2 border-gray-300 rounded mb-2"></div> <!-- Icon Placeholder -->
-                                <span class="text-[10px] text-center text-gray-600 font-medium leading-tight">{item}</span>
+                    <div class="grid grid-cols-3 gap-6">
+                         {#each ['Ministry Approved', 'AACSB Accredited', 'ABET Certified', 'ISO 9001', 'QAA Recognition', 'Research Excellence', 'Academic Quality', 'International Standards', 'Professional Bodies'] as accreditation}
+                            <div class="aspect-square bg-gray-50 rounded-xl flex flex-col items-center justify-center p-4 hover:bg-gray-100 transition-colors border border-gray-100">
+                                <span class="text-[11px] text-center text-gray-700 font-medium leading-tight">{accreditation}</span>
                             </div>
                         {/each}
                     </div>
@@ -570,20 +442,21 @@
 
     <!-- Mission Section -->
     <section class="py-24 px-6">
-        <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
-            <div class="bg-white relative flex items-center justify-center p-12 overflow-hidden">
-                <div class="flex gap-4 transform -rotate-6 scale-90">
-                    <div class="w-64 h-80 bg-[#00D166] flex items-center justify-center text-white font-bold text-4xl shadow-2xl">FAST COMPANY</div>
-                    <div class="w-64 h-80 bg-black flex items-center justify-center text-white font-bold text-4xl shadow-2xl z-10 -mt-12">Forbes</div>
-                    <div class="w-64 h-80 bg-[#4CA6FF] flex items-center justify-center text-white font-bold text-4xl shadow-2xl">FAST COMPANY</div>
-                </div>
+        <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="rounded-3xl overflow-hidden shadow-xl">
+                <img 
+                    src="/generated/image-modern-university-building-exterior-with-1766208090711-5.webp" 
+                    alt="University of Nizwa Campus"
+                    class="w-full h-[600px] object-cover"
+                />
             </div>
-            <div class="bg-sana-lime p-12 lg:p-24 flex flex-col justify-center">
-                <p class="font-serif text-3xl md:text-4xl leading-tight mb-8">
-                    Sana has been on a mission to transform how organizations learn and access knowledge with AI since 2016.
+            <div class="bg-primary-50 p-12 lg:p-16 rounded-3xl border border-primary-100">
+                <h2 class="font-serif text-4xl md:text-5xl mb-8 text-primary-900">Our Mission</h2>
+                <p class="font-serif text-xl md:text-2xl leading-relaxed mb-6 text-gray-800">
+                    The University of Nizwa is dedicated to providing world-class education that combines Islamic values with modern academic excellence.
                 </p>
-                <p class="font-serif text-3xl md:text-4xl leading-tight">
-                    We have pioneered the application of AI to learning experiences, content creation, learning management, and learning analytics. We believe the best is yet to come.
+                <p class="text-lg leading-relaxed text-gray-700">
+                    We strive to develop well-rounded graduates who are equipped with the knowledge, skills, and ethical foundation to contribute meaningfully to society and excel in an increasingly interconnected world.
                 </p>
             </div>
         </div>
@@ -592,11 +465,16 @@
     <!-- Bottom CTA -->
     <section class="py-32 px-6 text-center bg-white">
         <div class="max-w-4xl mx-auto">
-            <h2 class="font-serif text-6xl md:text-7xl mb-6">The future of <br/> learning is here.</h2>
-            <p class="text-xl text-gray-600 mb-10">Will you join us?</p>
-            <button class="bg-sana-lime text-black px-8 py-3 rounded-full text-base font-medium hover:bg-[#c2e600] transition-colors">
-                Book an intro
-            </button>
+            <h2 class="font-serif text-6xl md:text-7xl mb-6">Begin your journey <br/> to excellence</h2>
+            <p class="text-xl text-gray-600 mb-10">Join the University of Nizwa community today</p>
+            <div class="flex gap-4 justify-center">
+                <button class="bg-primary-600 text-white px-8 py-3 rounded-full text-base font-medium hover:bg-primary-700 transition-colors">
+                    Apply Now
+                </button>
+                <button class="bg-white text-primary-600 border-2 border-primary-600 px-8 py-3 rounded-full text-base font-medium hover:bg-primary-50 transition-colors">
+                    Schedule a Visit
+                </button>
+            </div>
         </div>
     </section>
 
@@ -622,63 +500,60 @@
         <div class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
             <div class="col-span-1 md:col-span-1">
                 <div class="flex items-center gap-2 mb-8">
-                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-black">
-                        <path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5L12 0Z" fill="currentColor"/>
+                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-primary-600">
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M6.99251 12.196C6.85314 12.5757 6.62925 12.9208 6.33682 13.2067H6.33835C6.00191 13.5351 5.58566 13.7756 5.12816 13.9059C4.67065 14.0362 4.18671 14.0522 3.72118 13.9523C3.25564 13.8524 2.82357 13.64 2.46501 13.3345C2.10645 13.0291 1.83299 12.6406 1.66998 12.2051C1.50697 11.7696 1.45969 11.3012 1.5325 10.8432C1.60532 10.3852 1.79587 9.95244 2.08653 9.58516C2.37718 9.21781 2.75852 8.9277 3.1952 8.74177C3.63188 8.55585 4.10979 8.48002 4.58462 8.52142L4.57074 8.50792C5.0567 8.54782 5.54575 8.48407 6.00378 8.32124C6.4618 8.15846 6.87776 7.90043 7.2226 7.56521C7.56746 7.22998 7.83285 6.82564 8.00036 6.38041C8.16786 5.93517 8.23344 5.45976 8.1924 4.98737L8.20628 5.00087C8.15181 4.43594 8.27796 3.86844 8.56753 3.37575C8.85701 2.88307 9.29579 2.48919 9.82407 2.24782C10.3523 2.00645 10.9443 1.92933 11.5192 2.02701C12.0942 2.12467 12.6243 2.39237 13.037 2.79358C13.4497 3.19479 13.7251 3.70999 13.8256 4.26892C13.926 4.82785 13.8467 5.4033 13.5984 5.9168C13.3501 6.4303 12.9449 6.85685 12.4381 7.13828C11.9313 7.41971 11.3474 7.54233 10.7663 7.4894L10.781 7.5029C10.2949 7.46279 9.80563 7.52632 9.34741 7.68904C8.88919 7.85176 8.47309 8.10975 8.12805 8.44499C7.78301 8.78025 7.51742 9.18466 7.34983 9.63001C7.18224 10.0754 7.11669 10.551 7.15774 11.0235L7.14309 11.01C7.1833 11.4112 7.13189 11.8162 6.99251 12.196ZM11.5077 14.7121L11.493 14.6986C11.9061 14.739 12.3232 14.6897 12.7143 14.5543C13.1053 14.4188 13.4605 14.2007 13.7542 13.9154C14.0477 13.6302 14.2726 13.285 14.4121 12.905C14.5518 12.525 14.6028 12.1196 14.5615 11.718L14.5762 11.7315C14.5351 11.2591 14.6007 10.7838 14.7681 10.3385C14.9356 9.89327 15.2011 9.48893 15.5459 9.15368C15.8908 8.8185 16.3068 8.56042 16.7648 8.39767C17.2228 8.23481 17.7118 8.17111 18.1978 8.21099L18.1832 8.19749C18.7645 8.25059 19.3485 8.12801 19.8556 7.84656C20.3627 7.56511 20.7681 7.13845 21.0165 6.62479C21.265 6.11114 21.3444 5.53548 21.2439 4.97634C21.1435 4.4172 20.868 3.9018 20.4551 3.50044C20.0422 3.09909 19.512 2.8313 18.9368 2.73364C18.3616 2.63596 17.7695 2.71315 17.241 2.95467C16.7126 3.19618 16.2737 3.59027 15.9842 4.08319C15.6946 4.57609 15.5685 5.14383 15.6232 5.70895L15.6093 5.6947C15.6504 6.16712 15.585 6.64259 15.4175 7.08788C15.2501 7.53318 14.9846 7.93758 14.6398 8.27287C14.2949 8.60805 13.8789 8.86612 13.4208 9.02888C12.9627 9.19163 12.4736 9.25523 11.9876 9.21526L12.0015 9.22951C11.5885 9.18908 11.1713 9.23836 10.7803 9.37381C10.3893 9.50919 10.034 9.72744 9.74039 10.0127C9.44674 10.2979 9.22199 10.6431 9.08234 11.0231C8.94276 11.4031 8.89176 11.8085 8.93304 12.2101L8.91915 12.1966C8.96005 12.6689 8.89439 13.1443 8.72688 13.5895C8.5593 14.0346 8.29389 14.4389 7.94908 14.7741C7.60425 15.1093 7.18835 15.3673 6.73039 15.5302C6.27242 15.693 5.78342 15.7569 5.29749 15.7171L5.31138 15.7306C4.73003 15.6775 4.14599 15.8001 3.63892 16.0815C3.13186 16.363 2.72644 16.7896 2.478 17.3033C2.22954 17.817 2.15013 18.3926 2.25061 18.9518C2.35109 19.5109 2.62657 20.0263 3.03945 20.4276C3.45234 20.829 3.98253 21.0968 4.55773 21.1944C5.13293 21.2921 5.72512 21.2149 6.25353 20.9734C6.78193 20.7319 7.22085 20.3379 7.51038 19.8449C7.79994 19.352 7.92601 18.7843 7.87139 18.2191L7.88605 18.2326C7.845 17.7602 7.91058 17.2849 8.07809 16.8396C8.24551 16.3944 8.511 15.99 8.85581 15.6548C9.20069 15.3196 9.61664 15.0615 10.0746 14.8988C10.5327 14.7359 11.0217 14.6722 11.5077 14.7121ZM17.1996 10.7633C16.9071 11.0493 16.6832 11.3944 16.5437 11.7741C16.4042 12.1538 16.3526 12.5587 16.3925 12.9601L16.3786 12.9466C16.4197 13.419 16.3541 13.8944 16.1866 14.3396C16.0191 14.7849 15.7537 15.1892 15.4089 15.5244C15.064 15.8596 14.648 16.1177 14.19 16.2804C13.732 16.4433 13.2429 16.507 12.757 16.4671L12.7708 16.4806C12.1896 16.4281 11.6057 16.551 11.0989 16.8328C10.5921 17.1145 10.1871 17.5414 9.93902 18.0551C9.69097 18.5689 9.61188 19.1444 9.71265 19.7035C9.81349 20.2625 10.0892 20.7777 10.5022 21.1788C10.9152 21.5799 11.4454 21.8474 12.0205 21.9448C12.5957 22.0423 13.1877 21.9649 13.716 21.7234C14.2443 21.4817 14.683 21.0877 14.9724 20.5947C15.2618 20.1018 15.3878 19.5342 15.3332 18.9692L15.3478 18.9827C15.3068 18.5103 15.3723 18.0349 15.5398 17.5896C15.7073 17.1444 15.9728 16.7401 16.3176 16.4048C16.6625 16.0696 17.0784 15.8115 17.5364 15.6488C17.9945 15.486 18.4835 15.4222 18.9695 15.4621L18.9548 15.4486C19.4296 15.4901 19.9076 15.4144 20.3444 15.2286C20.7811 15.0427 21.1625 14.7527 21.4533 14.3854C21.744 14.0181 21.9347 13.5854 22.0075 13.1274C22.0805 12.6694 22.0332 12.2009 21.8703 11.7653C21.7073 11.3298 21.4339 10.9413 21.0754 10.6358C20.7168 10.3303 20.2848 10.1178 19.8192 10.0179C19.3536 9.91795 18.8697 9.93385 18.4121 10.0641C17.9546 10.1945 17.5383 10.4349 17.2019 10.7633H17.1996Z"
+                            fill="currentColor"
+                        />
                     </svg>
-                    <span class="font-medium text-xl tracking-tight">Sana</span>
+                    <span class="font-medium text-xl tracking-tight">University of Nizwa</span>
                 </div>
                 <div class="text-sm text-gray-500 mb-4">Subscribe to our newsletter</div>
                 <div class="flex gap-2 border-b border-gray-200 pb-2 mb-8">
                     <input type="email" placeholder="Email address" class="w-full outline-none text-sm" />
                     <button class="text-gray-400 hover:text-black">→</button>
                 </div>
-                <div class="text-xs text-gray-400">© Sana Labs AB 2025</div>
+                <div class="text-xs text-gray-400">© University of Nizwa 2025</div>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-3 gap-8 col-span-1 md:col-span-3">
                 <div>
-                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-6">Sana Agents</h4>
+                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-6">Academics</h4>
                     <ul class="space-y-3 text-sm text-gray-600">
-                        <li><a href="#" class="hover:text-black">Overview</a></li>
-                        <li><a href="#" class="hover:text-black">AI agents</a></li>
-                        <li><a href="#" class="hover:text-black">Enterprise search</a></li>
-                        <li><a href="#" class="hover:text-black">iOS app</a></li>
-                        <li><a href="#" class="hover:text-black">Solutions</a></li>
-                        <li><a href="#" class="hover:text-black">Integrations</a></li>
-                        <li><a href="#" class="hover:text-black">Events</a></li>
-                        <li><a href="#" class="hover:text-black">Security</a></li>
-                        <li><a href="#" class="hover:text-black">Stories</a></li>
-                        <li><a href="#" class="hover:text-black">Pricing</a></li>
-                        <li><a href="#" class="hover:text-black">Help Center</a></li>
+                        <li><a href="#" class="hover:text-primary-600">Programs</a></li>
+                        <li><a href="#" class="hover:text-primary-600">Undergraduate</a></li>
+                        <li><a href="#" class="hover:text-primary-600">Graduate</a></li>
+                        <li><a href="#" class="hover:text-primary-600">Doctoral</a></li>
+                        <li><a href="#" class="hover:text-primary-600">Colleges</a></li>
+                        <li><a href="#" class="hover:text-primary-600">Faculty</a></li>
+                        <li><a href="#" class="hover:text-primary-600">Academic Calendar</a></li>
+                        <li><a href="#" class="hover:text-primary-600">Library</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-6">Sana Learn</h4>
+                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-6">Admissions</h4>
                     <ul class="space-y-3 text-sm text-gray-600">
-                        <li><a href="#" class="hover:text-black">Overview</a></li>
-                        <li><a href="#" class="hover:text-black">Learning management</a></li>
-                        <li><a href="#" class="hover:text-black">Content creation</a></li>
-                        <li><a href="#" class="hover:text-black">AI tutor</a></li>
-                        <li><a href="#" class="hover:text-black">Solutions</a></li>
-                        <li><a href="#" class="hover:text-black">Partner stories</a></li>
-                        <li><a href="#" class="hover:text-black">Integrations</a></li>
-                        <li><a href="#" class="hover:text-black">Events</a></li>
-                        <li><a href="#" class="hover:text-black">Pricing</a></li>
-                        <li><a href="#" class="hover:text-black">Help Center</a></li>
-                        <li><a href="#" class="hover:text-black">Changelog</a></li>
+                        <li><a href="#" class="hover:text-primary-600">Apply Now</a></li>
+                        <li><a href="#" class="hover:text-primary-600">Requirements</a></li>
+                        <li><a href="#" class="hover:text-primary-600">Tuition & Fees</a></li>
+                        <li><a href="#" class="hover:text-primary-600">Scholarships</a></li>
+                        <li><a href="#" class="hover:text-primary-600">International Students</a></li>
+                        <li><a href="#" class="hover:text-primary-600">Visit Campus</a></li>
+                        <li><a href="#" class="hover:text-primary-600">Contact Admissions</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-6">Company</h4>
+                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-6">University</h4>
                     <ul class="space-y-3 text-sm text-gray-600">
-                        <li><a href="#" class="hover:text-black">Hexad Releases</a></li>
-                        <li><a href="#" class="hover:text-black">Swedish AI Reform</a></li>
-                        <li><a href="#" class="hover:text-black">Strange Loop Podcast</a></li>
-                        <li><a href="#" class="hover:text-black">Mission</a></li>
-                        <li><a href="#" class="hover:text-black">Careers</a></li>
-                        <li><a href="#" class="hover:text-black">Press</a></li>
-                        <li><a href="#" class="hover:text-black">Legal</a></li>
-                        <li><a href="#" class="hover:text-black">Cookie settings</a></li>
+                        <li><a href="#" class="hover:text-primary-600">About Us</a></li>
+                        <li><a href="#" class="hover:text-primary-600">Mission & Vision</a></li>
+                        <li><a href="#" class="hover:text-primary-600">Campus Life</a></li>
+                        <li><a href="#" class="hover:text-primary-600">Research</a></li>
+                        <li><a href="#" class="hover:text-primary-600">News & Events</a></li>
+                        <li><a href="#" class="hover:text-primary-600">Careers</a></li>
+                        <li><a href="#" class="hover:text-primary-600">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
