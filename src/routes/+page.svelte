@@ -178,27 +178,70 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-20 pb-16 px-6 text-center overflow-hidden">
-        <div class="max-w-4xl mx-auto mb-12">
-            <h1 class="font-serif text-6xl md:text-7xl lg:text-[5rem] leading-[1.1] mb-6 font-normal tracking-tight">
-                Where tradition meets <br/> innovation in education
-            </h1>
-            <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8 leading-relaxed">
-                The University of Nizwa combines academic excellence with modern facilities to prepare students for global success.
-            </p>
-            <button class="bg-primary-600 text-white px-8 py-3 rounded-full text-base font-medium hover:bg-primary-700 transition-colors">
-                Explore Programs
-            </button>
-        </div>
-
-        <!-- Hero Image -->
-        <div class="relative max-w-[1400px] mx-auto h-[400px] md:h-[600px] mt-12 rounded-3xl overflow-hidden shadow-2xl">
+    <section class="relative h-[700px] md:h-[800px] overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0">
             <img 
-                src="/generated/image-modern-university-campus-with-students-w-1766208076982-0.webp" 
-                alt="University of Nizwa Campus" 
+                src="/uploaded/1766210066804-ycvbxh1.png" 
+                alt="University of Nizwa Campus at Dusk" 
                 class="w-full h-full object-cover"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative h-full flex flex-col items-center justify-center px-6 text-center">
+            <div class="max-w-5xl mx-auto">
+                <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-6 font-normal tracking-tight text-white">
+                    Discover your future, <br/> shape your legacy
+                </h1>
+                <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed">
+                    Join a community of innovators, thinkers, and leaders. Experience education that goes beyond traditional boundaries.
+                </p>
+
+                <!-- Statistics -->
+                <div class="flex flex-wrap justify-center gap-8 md:gap-16 mb-12">
+                    <div class="text-center">
+                        <div class="text-4xl md:text-5xl font-bold text-white mb-2">11K+</div>
+                        <div class="text-sm md:text-base text-white/80">Students</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl md:text-5xl font-bold text-white mb-2">100+</div>
+                        <div class="text-sm md:text-base text-white/80">Programs</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl md:text-5xl font-bold text-white mb-2">60%</div>
+                        <div class="text-sm md:text-base text-white/80">Employment Rate</div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons and Search -->
+                <div class="flex flex-col md:flex-row items-center justify-center gap-4 max-w-3xl mx-auto">
+                    <button class="bg-primary-600 text-white px-8 py-3 rounded-full text-base font-medium hover:bg-primary-700 transition-colors whitespace-nowrap">
+                        Explore Programs
+                    </button>
+                    
+                    <div class="flex-1 w-full md:max-w-md">
+                        <div class="relative">
+                            <input 
+                                type="text" 
+                                placeholder="Quick search programs..." 
+                                class="w-full px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder:text-white/60 outline-none focus:bg-white/20 focus:border-white/40 transition-all"
+                            />
+                            <button class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <path d="m21 21-4.35-4.35"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button class="bg-white text-primary-600 px-8 py-3 rounded-full text-base font-medium hover:bg-gray-100 transition-colors whitespace-nowrap">
+                        Apply Now
+                    </button>
+                </div>
+            </div>
         </div>
     </section>
 
